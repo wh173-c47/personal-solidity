@@ -42,4 +42,16 @@ contract MockBitUtils {
       return n.setBits(v, o, l);
     }
 
+    function extractBytes(uint256 n, uint256 o, uint256 l) external pure returns (uint256) {
+      return n.extractBytes(o, l);
+    }
+
+    function setBytes(
+      uint256 n,
+      uint256 v,
+      uint256 o,
+      uint256 l
+    ) external pure returns (uint256) {
+      return n.setBytes(v, o, l);
+    }
 }

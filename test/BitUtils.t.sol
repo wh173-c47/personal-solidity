@@ -32,4 +32,10 @@ contract BitUtilsTest is Test {
 
     function testSetBits() public {
     }
+
+    function testExtractBytes() public {
+    }
+
+    function testSetBytes() public {
+    }
 }
