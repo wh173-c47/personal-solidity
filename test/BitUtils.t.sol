@@ -2,7 +2,7 @@
 pragma solidity ^0.8.25;
 
 import {Test, console} from "forge-std/Test.sol";
-import {MockBitUtils} from "../mocks/MockBitUtils.sol";
+import {MockBitUtils} from "./mocks/MockBitUtils.sol";
 
 // TODO: Develop tests, add edge test cases
 contract BitUtilsTest is Test {

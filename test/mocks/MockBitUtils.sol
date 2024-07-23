@@ -6,11 +6,14 @@ import {BitUtils} from "../../src/utils/BitUtils.sol";
 contract MockBitUtils {
     using BitUtils for uint256;
 
-    function isPow2(uint256 n,) external pure returns (bool) {
+    function isPow2(uint256 n) external pure returns (bool) {
         return n.isPow2();
     }
 
-    function roundUpToNearestPowerOf2(uint256 n, uint256 p2) external pure returns (uint256) {
+    function roundUpToNearestPowerOf2(
+      uint256 n,
+      uint256 p2
+    ) external pure returns (uint256) {
         return n.roundUpToNearestPowerOf2(p2);
     }
 

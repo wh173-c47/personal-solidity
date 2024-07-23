@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
 
 // Efficient bit manipulation library, note that checks are expected to be performed on "userland"
 library BitUtils {
@@ -75,7 +76,7 @@ library BitUtils {
 
             // Handle pairs, nibbles, bytes
             n := sub(n, and(shr(1, n), _M1))
-            n := add(and(n, m2), and(shr(2, n), _M2))
+            n := add(and(n, _M2), and(shr(2, n), _M2))
             n := and(add(n, shr(4, n)), _M4)
 
             // Sum bytes
@@ -103,7 +104,12 @@ library BitUtils {
     // Does not check if `o` > `n` bit length
     // Does not check if `l`  > `n` bit length`
     // Does not check if `v` > `l`
-    function setBits(uint256 n, uint256 v, uint256 o, uint256 l) internal pure returns (uint256 r) {
+    function setBits(
+        uint256 n,
+        uint256 v,
+         uint256 o,
+         uint256 l
+    ) internal pure returns (uint256 r) {
         /// @solidity memory-safe-assembly
         assembly {
             let m := shl(o, sub(shl(l, 1), 1))
